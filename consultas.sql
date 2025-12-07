@@ -107,3 +107,14 @@ FROM posto p
 JOIN avaliacao a ON p.id_posto = a.id_posto
 GROUP BY p.nome
 ORDER BY media_nota DESC;
+
+
+
+SELECT 
+    p.nome AS posto,
+    s.nome_servico
+FROM posto p
+JOIN posto_servico ps ON p.id_posto = ps.id_posto
+JOIN servico s ON ps.id_servico = s.id_servico
+ORDER BY p.nome;
+
